@@ -12,12 +12,28 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/apple.jpg
+  AssetGenImage get apple => const AssetGenImage('assets/images/apple.jpg');
+
+  /// File path: assets/images/iphon.png
+  AssetGenImage get iphon => const AssetGenImage('assets/images/iphon.png');
+
   /// File path: assets/images/launcher_icon.png
   AssetGenImage get launcherIcon =>
       const AssetGenImage('assets/images/launcher_icon.png');
 
+  /// File path: assets/images/sam.png
+  AssetGenImage get sam => const AssetGenImage('assets/images/sam.png');
+
+  /// File path: assets/images/samsung.jpg
+  AssetGenImage get samsung => const AssetGenImage('assets/images/samsung.jpg');
+
+  /// File path: assets/images/user.png
+  AssetGenImage get user => const AssetGenImage('assets/images/user.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [launcherIcon];
+  List<AssetGenImage> get values =>
+      [apple, iphon, launcherIcon, sam, samsung, user];
 }
 
 class Assets {

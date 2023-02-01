@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:last_app/core/themes/style/app_bar_style.dart';
+import 'package:last_app/modules/login/screen/login_screen.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -7,10 +9,8 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("appLogin".tr),
-        centerTitle: true,
-      ),
-    );
+        resizeToAvoidBottomInset: false,
+        appBar: AppBarStyle.widgetAppBar("appLogin".tr),
+        body: const LoginScreen());
   }
 }

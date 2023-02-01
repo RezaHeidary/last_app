@@ -10,7 +10,22 @@ class Messages extends Translations {
           'appCode': 'Code',
           'appProduct': 'Product',
           'appAddManagement': 'Add Management',
-          'appBasket': 'Basket'
+          'appBasket': 'Basket',
+          'btnPhone': 'Send Code',
+          'btnCode': 'Login',
+          'btnBack': 'Back',
+          'textFildPhone': 'Phone',
+          'textFildCode': 'Code',
+          'listProducts': 'Products',
+          'drawerLocal': 'Languegs',
+          'drawerSeting': 'Seting',
+          'drawerLThemes': 'Themes',
+          'Description': 'Description',
+          'less': 'Show less',
+          'more': 'Show more',
+          'basketPrice': 'Price  ',
+          'accuntPhone': 'Phone',
+          'exit': 'Exit'
         },
         'fa_IR': {
           'appShop': 'فروشگاه',
@@ -19,7 +34,22 @@ class Messages extends Translations {
           'appCode': 'کد ارسال شده',
           'appProduct': 'محصولات',
           'appAddManagement': 'مدیریت محصولات',
-          'appBasket': 'سبد خرید'
+          'appBasket': 'سبد خرید',
+          'btnPhone': 'ارسال کد',
+          'btnCode': 'ورود',
+          'btnBack': 'برگشت',
+          'textFildPhone': 'شماره تلفن',
+          'textFildCode': 'کد ارسال شده',
+          'listProducts': 'محصولات',
+          'drawerLocal': 'زبان',
+          'drawerSeting': 'تنظیمات',
+          'drawerLThemes': 'تم',
+          'Description': 'توضیحات',
+          'less': 'پنهان',
+          'more': 'بیشتر',
+          'basketPrice': ' تومان',
+          'accuntPhone': 'تلفن',
+          'exit': 'خروج'
         }
       };
 }
