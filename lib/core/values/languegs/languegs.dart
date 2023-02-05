@@ -25,6 +25,8 @@ class Messages extends Translations {
           'more': 'Show more',
           'basketPrice': 'Price  ',
           'accuntPhone': 'Phone',
+          'addImageFromCamera': 'Camera',
+          'addImageFromgallery': 'Gallery',
           'exit': 'Exit'
         },
         'fa_IR': {
@@ -49,6 +51,8 @@ class Messages extends Translations {
           'more': 'بیشتر',
           'basketPrice': ' تومان',
           'accuntPhone': 'تلفن',
+          'addImageFromCamera': 'دوربین',
+          'addImageFromgallery': 'گالری',
           'exit': 'خروج'
         }
       };

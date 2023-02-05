@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:last_app/core/component/component.dart';
 import 'package:last_app/modules/home/model/fake_model.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 
@@ -16,14 +17,12 @@ class BasketScreen extends StatelessWidget {
             itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Material(
-                    color: Colors.transparent,
                     borderRadius: BorderRadius.circular(30),
                     elevation: 5,
                     child: Container(
                         width: Get.width,
                         height: Get.height / 4,
                         decoration: BoxDecoration(
-                          color: Colors.white,
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: Row(
@@ -70,7 +69,6 @@ class BasketScreen extends StatelessWidget {
                                   children: const [
                                     Icon(
                                       Icons.monetization_on_rounded,
-                                      color: Colors.black,
                                       size: 30,
                                     ),
                                     SizedBox(
@@ -78,7 +76,6 @@ class BasketScreen extends StatelessWidget {
                                     ),
                                     Icon(
                                       Icons.delete,
-                                      color: Colors.black,
                                       size: 30,
                                     ),
                                   ],
@@ -93,7 +90,9 @@ class BasketScreen extends StatelessWidget {
                 )),
       ),
       floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Componet.myLaunchUrl("github.com");
+          },
           child: const Icon(
             Icons.monetization_on_rounded,
           )),

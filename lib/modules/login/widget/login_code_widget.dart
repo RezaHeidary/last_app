@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:last_app/core/themes/style/btn_login_style.dart';
+import 'package:last_app/modules/login/controller/firebase_controller.dart';
 import '../controller/login_controller.dart';
 
 class LoginCodeWidget {
   LoginCodeWidget._();
   static var loginController = Get.find<LoginController>();
+  static var loginFireBaseController = Get.find<LoginFireBase>();
 
   static widgetCode() {
     return Column(
@@ -16,6 +18,7 @@ class LoginCodeWidget {
           padding: const EdgeInsets.all(40),
           // ignore: prefer_const_constructors
           child: TextField(
+            controller: loginFireBaseController.textEditingControllerCode.value,
             decoration: InputDecoration(
               hintText: "textFildCode".tr,
             ),
@@ -27,7 +30,7 @@ class LoginCodeWidget {
         ),
         ElevatedButton(
             onPressed: () {
-              loginController.getRouteShop();
+              loginFireBaseController.getCheckCodeForLogin();
             },
             style: BtnLoginStyle.btnStyle,
             child: Text(

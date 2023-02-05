@@ -11,6 +11,6 @@ class LoginView extends StatelessWidget {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBarStyle.widgetAppBar("appLogin".tr),
-        body: const LoginScreen());
+        body: LoginScreen());
   }
 }

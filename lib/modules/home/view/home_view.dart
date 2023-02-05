@@ -27,7 +27,7 @@ class HomeView extends StatelessWidget {
             children: [
               const HomeScreen(),
               const BasketScreen(),
-              const AccountScreen(),
+              AccountScreen(),
             ],
           ),
         ),
