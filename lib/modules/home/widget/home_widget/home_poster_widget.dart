@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:last_app/modules/home/model/fake_model.dart';
+import 'package:last_app/controller/product_api_controller.dart';
 import 'package:page_indicator/page_indicator.dart';
 
 class HomePosterWidget {
   HomePosterWidget._();
+  static var homeApiController = Get.find<ProductApiController>();
 
   static widgetHomePoster() {
     return SizedBox(
@@ -21,8 +22,8 @@ class HomePosterWidget {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                              image: AssetImage(
-                                  FakeModel.imagePosterGridview[index]),
+                              image: NetworkImage(homeApiController
+                                  .homeModleList[index].category!['image']),
                               fit: BoxFit.cover)),
                     ))),
       ),

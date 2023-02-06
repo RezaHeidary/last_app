@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:last_app/controller/product_api_controller.dart';
 import 'package:last_app/modules/home/controller/home_controller.dart';
-import 'package:last_app/modules/home/model/fake_model.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 
 class ListProducts {
   ListProducts._();
   static var homeController = Get.find<HomeController>();
+  static var homeApiController = Get.find<ProductApiController>();
 
   static widgetListProduct() {
     return SizedBox(
@@ -15,10 +16,10 @@ class ListProducts {
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           physics: const ScrollPhysics(parent: BouncingScrollPhysics()),
-          itemCount: 2,
+          itemCount: homeApiController.homeModleList.length,
           itemBuilder: (context, index) => GestureDetector(
                 onTap: () {
-                  homeController.getProductPage();
+                  homeController.getProductPage(index);
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(10),
@@ -27,15 +28,19 @@ class ListProducts {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
                         image: DecorationImage(
-                            image: AssetImage(
-                              FakeModel.imagePosterGridview[index],
+                            image: NetworkImage(
+                              homeApiController
+                                  .homeModleList[index].category!['image'],
                             ),
                             fit: BoxFit.fill)),
                     child: Align(
                         alignment: Alignment.bottomCenter,
                         child: Padding(
                           padding: const EdgeInsets.only(top: 9),
-                          child: Text("1200000".seRagham(),
+                          child: Text(
+                              homeApiController.homeModleList[index].price
+                                  .toString()
+                                  .seRagham(),
                               style: const TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold)),
                         )),

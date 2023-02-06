@@ -11,7 +11,7 @@ class BottomNavStyle {
     return Obx(
       () => CustomNavigationBar(
         iconSize: 30.0,
-        selectedColor: Color.fromARGB(255, 30, 124, 108),
+        selectedColor: const Color.fromARGB(255, 30, 124, 108),
         currentIndex: homeController.currentIndex.value,
         onTap: (index) {
           homeController.currentIndex.value = index;

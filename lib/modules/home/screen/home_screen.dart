@@ -3,30 +3,35 @@ import 'package:get/get.dart';
 import 'package:last_app/modules/home/widget/home_widget/home_poster_widget.dart';
 import 'package:last_app/modules/home/widget/home_widget/list_products.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+import '../../../controller/product_api_controller.dart';
 
+// ignore: must_be_immutable
+class HomeScreen extends StatelessWidget {
+  HomeScreen({super.key});
+  var homeApiController = Get.find<ProductApiController>();
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        HomePosterWidget.widgetHomePoster(),
+    return Obx(() => !homeApiController.loading.value
+        ? Column(
+            children: [
+              HomePosterWidget.widgetHomePoster(),
 
-        const SizedBox(
-          height: 50,
-        ),
+              const SizedBox(
+                height: 50,
+              ),
 
-        //text product
-        SizedBox(
-          width: Get.width - 30,
-          child: Text(
-            "listProducts".tr,
-            style: Theme.of(context).textTheme.headline5,
-          ),
-        ),
+              //text product
+              SizedBox(
+                width: Get.width - 30,
+                child: Text(
+                  "listProducts".tr,
+                  style: Theme.of(context).textTheme.headline5,
+                ),
+              ),
 
-        ListProducts.widgetListProduct()
-      ],
-    );
+              ListProducts.widgetListProduct()
+            ],
+          )
+        : const Center(child: CircularProgressIndicator()));
   }
 }

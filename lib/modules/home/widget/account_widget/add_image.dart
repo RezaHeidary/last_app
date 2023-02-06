@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:last_app/data/seviec/service.dart';
+import 'package:last_app/data/seviec/pic_image_service.dart';
 
 class AddImageController {
   AddImageController._();

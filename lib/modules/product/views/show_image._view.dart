@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:last_app/modules/home/model/fake_model.dart';
+import 'package:last_app/controller/product_api_controller.dart';
 import 'package:last_app/modules/product/controller/show_image_controller.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
@@ -10,6 +10,8 @@ class ProductShowImageView extends StatelessWidget {
   ProductShowImageView({super.key});
   ProductShowImageController productShowImageController =
       Get.put(ProductShowImageController());
+  static var homeApiController = Get.find<ProductApiController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +19,7 @@ class ProductShowImageView extends StatelessWidget {
       appBar: AppBar(
         title: Obx(
           () => Text(
-              "Image:${productShowImageController.count.value}/${FakeModel.imagePosterGridview.length}"),
+              "Image:${productShowImageController.count.value}/${homeApiController.homeModleList[Get.arguments].images!.length}"),
         ),
       ),
       body: PhotoViewGallery.builder(
@@ -27,11 +29,13 @@ class ProductShowImageView extends StatelessWidget {
         },
         builder: (BuildContext context, int index) {
           return PhotoViewGalleryPageOptions(
-            imageProvider: AssetImage(FakeModel.imagePosterGridview[index]),
+            imageProvider: NetworkImage(
+                homeApiController.homeModleList[Get.arguments].images![index]),
             initialScale: PhotoViewComputedScale.contained * 0.8,
           );
         },
-        itemCount: FakeModel.imagePosterGridview.length,
+        itemCount:
+            homeApiController.homeModleList[Get.arguments].images!.length,
       ),
     );
   }

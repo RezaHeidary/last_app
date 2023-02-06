@@ -7,14 +7,16 @@ import 'package:last_app/routes/pages.dart';
 class HomeController extends GetxController {
   var currentIndex = 0.obs;
   var connect = false.obs;
+  // ignore: prefer_typing_uninitialized_variables
   var subscription;
-  getProductPage() {
-    Get.toNamed(NamedRoute.productRoute);
+  getProductPage(int id) {
+    Get.toNamed(NamedRoute.productRoute, arguments: id);
   }
 
   @override
   void onInit() {
     super.onInit();
+
     intrnetCheker();
   }
 

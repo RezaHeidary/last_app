@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:last_app/core/themes/style/app_bar_style.dart';
+import 'package:last_app/modules/home/controller/fake_data.dart';
 import 'package:last_app/modules/home/widget/bottom_navigation_bar_style.dart';
 import 'package:last_app/modules/home/controller/home_controller.dart';
 import 'package:last_app/modules/home/controller/home_drawer_controller.dart';
@@ -9,12 +10,15 @@ import 'package:last_app/modules/home/screen/basket_screen.dart';
 import 'package:last_app/modules/home/screen/home_screen.dart';
 import 'package:last_app/modules/home/widget/drawer_widget.dart';
 
+import '../../../controller/product_api_controller.dart';
+
 // ignore: must_be_immutable
 class HomeView extends StatelessWidget {
   HomeView({super.key});
   HomeDrawerController homeDrawerController = Get.put(HomeDrawerController());
   HomeController homeController = Get.put(HomeController());
-
+  ProductApiController homeApiController = Get.put(ProductApiController());
+  FakeData fakeModel = Get.put(FakeData());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,9 +29,9 @@ class HomeView extends StatelessWidget {
             index: homeController.currentIndex.value,
             // ignore: prefer_const_literals_to_create_immutables
             children: [
-              const HomeScreen(),
-              const BasketScreen(),
-              AccountScreen(),
+              HomeScreen(),
+              BasketScreen(),
+              const AccountScreen(),
             ],
           ),
         ),

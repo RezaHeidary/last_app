@@ -1,33 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:last_app/gen/assets.gen.dart';
+import 'package:last_app/controller/product_api_controller.dart';
 import 'package:last_app/modules/product/widget/image_product_widget.dart';
-import 'package:last_app/routes/pages.dart';
 import 'package:persian_number_utility/persian_number_utility.dart';
 import 'package:readmore/readmore.dart';
 
+// ignore: must_be_immutable
 class ProductScreen extends StatelessWidget {
-  const ProductScreen({super.key});
-
+  ProductScreen({super.key});
+  var homeApiController = Get.find<ProductApiController>();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
-          ImageProductWidget.widgetProductImage(),
+          ImageProductWidget.widgetProductImage(Get.arguments),
           const SizedBox(
             height: 20,
           ),
-          const Text(
-            "iPhone 14",
-            style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+          Text(
+            homeApiController.homeModleList[Get.arguments].title.toString(),
+            style: const TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 20,
           ),
           Text(
             // ignore: prefer_interpolation_to_compose_strings
-            "Price : " + "1200000".seRagham(),
+            "Price : " +
+                homeApiController.homeModleList[Get.arguments].price
+                    .toString()
+                    .seRagham(),
             style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
           ),
           const SizedBox(
@@ -41,7 +44,8 @@ class ProductScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(14),
             child: ReadMoreText(
-              'Flutter is Google’s mobile UI open source framework to build high-quality  native (super fast) interfaces for iOS and Android apps with the unified codebase.',
+              homeApiController.homeModleList[Get.arguments].description
+                  .toString(),
               trimLines: 2,
               trimMode: TrimMode.Line,
               trimCollapsedText: 'more'.tr,
