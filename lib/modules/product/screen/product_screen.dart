@@ -20,7 +20,7 @@ class ProductScreen extends StatelessWidget {
           ),
           Text(
             homeApiController.homeModleList[Get.arguments].title.toString(),
-            style: const TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 20,
@@ -31,14 +31,14 @@ class ProductScreen extends StatelessWidget {
                 homeApiController.homeModleList[Get.arguments].price
                     .toString()
                     .seRagham(),
-            style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 20,
           ),
           Text(
             "Description".tr,
-            style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           // ignore: prefer_const_constructors
           Padding(
@@ -51,9 +51,9 @@ class ProductScreen extends StatelessWidget {
               trimCollapsedText: 'more'.tr,
               trimExpandedText: 'less'.tr,
               moreStyle:
-                  const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
               lessStyle:
-                  const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
             ),
           ),
         ],

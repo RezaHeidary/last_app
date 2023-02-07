@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
 
 class Themes {
-  static final lightTheme = ThemeData(colorScheme: const ColorScheme.light());
-  static final darkTheme = ThemeData(colorScheme: const ColorScheme.dark());
+  static final darkTheme = ThemeData(
+    fontFamily: "Sen",
+    colorScheme: ColorScheme.fromSwatch(
+        primarySwatch: Colors.lightBlue, brightness: Brightness.dark),
+    useMaterial3: true,
+  );
+  static final lightTheme = ThemeData(
+    fontFamily: "Sen",
+    colorScheme: ColorScheme.fromSwatch(
+      primarySwatch: Colors.lightBlue,
+      brightness: Brightness.light,
+    ),
+    useMaterial3: true,
+  );
 }

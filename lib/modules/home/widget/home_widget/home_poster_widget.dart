@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:last_app/controller/product_api_controller.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:page_indicator/page_indicator.dart';
 
 class HomePosterWidget {
@@ -16,16 +18,26 @@ class HomePosterWidget {
         child: PageIndicatorContainer(
             length: 2,
             child: PageView.builder(
-                itemCount: 2,
-                physics: const ScrollPhysics(parent: BouncingScrollPhysics()),
-                itemBuilder: (context, index) => Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
-                              image: NetworkImage(homeApiController
-                                  .homeModleList[index].category!['image']),
-                              fit: BoxFit.cover)),
-                    ))),
+              itemCount: 2,
+              physics: const ScrollPhysics(parent: BouncingScrollPhysics()),
+              itemBuilder: (context, index) => CachedNetworkImage(
+                imageUrl: homeApiController.homeModleList[index].images![index],
+                imageBuilder: (context, imageProvider) => Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: imageProvider,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                placeholder: (context, url) =>
+                    LoadingAnimationWidget.dotsTriangle(
+                  size: 50,
+                  color: Colors.deepOrange,
+                ),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
+              ),
+            )),
       ),
     );
   }

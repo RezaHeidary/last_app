@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:last_app/modules/home/controller/home_drawer_controller.dart';
+import 'package:last_app/routes/pages.dart';
 
 class DrawerWideget {
   DrawerWideget._();
@@ -50,7 +52,10 @@ class DrawerWideget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      GetStorage().write("isLogin", "false");
+                      Get.offAllNamed(NamedRoute.initialRoute);
+                    },
                     child: SizedBox(
                         width: Get.width - 175, child: Text('exit'.tr))),
               ],

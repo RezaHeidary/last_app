@@ -27,6 +27,8 @@ class Messages extends Translations {
           'accuntPhone': 'Phone',
           'addImageFromCamera': 'Camera',
           'addImageFromgallery': 'Gallery',
+          'addProduct': 'Add Product',
+          'date': 'Login Date',
           'exit': 'Exit'
         },
         'fa_IR': {
@@ -53,6 +55,8 @@ class Messages extends Translations {
           'accuntPhone': 'تلفن',
           'addImageFromCamera': 'دوربین',
           'addImageFromgallery': 'گالری',
+          'addProduct': 'سبد خرید خالی است',
+          'date': 'زمان ورود',
           'exit': 'خروج'
         }
       };

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:last_app/modules/home/widget/home_widget/home_poster_widget.dart';
 import 'package:last_app/modules/home/widget/home_widget/list_products.dart';
-
 import '../../../controller/product_api_controller.dart';
 
 // ignore: must_be_immutable
@@ -25,7 +24,7 @@ class HomeScreen extends StatelessWidget {
                 width: Get.width - 30,
                 child: Text(
                   "listProducts".tr,
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
               ),
 

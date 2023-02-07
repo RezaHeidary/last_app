@@ -12,6 +12,10 @@ class LoginController extends GetxController {
     indexPage.value = 0;
   }
 
+  getSingUp() {
+    indexPage.value = 2;
+  }
+
   getRouteShop() {
     Get.offNamed(NamedRoute.homeRoute);
   }

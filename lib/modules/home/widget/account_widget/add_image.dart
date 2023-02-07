@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:last_app/data/seviec/pic_image_service.dart';
 
 class AddImageController {
@@ -32,7 +33,7 @@ class AddImageController {
                         padding: const EdgeInsets.all(8.0),
                         child: InkWell(
                           onTap: () {
-                            picImage.picIngallery();
+                            picImage.picImage(ImageSource.gallery);
                             Navigator.pop(context);
                           },
                           child: Row(
@@ -51,7 +52,7 @@ class AddImageController {
                         padding: const EdgeInsets.all(8.0),
                         child: InkWell(
                           onTap: () {
-                            picImage.picInCamera();
+                            picImage.picImage(ImageSource.camera);
 
                             Navigator.pop(context);
                           },

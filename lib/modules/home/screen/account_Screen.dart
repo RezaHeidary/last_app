@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:last_app/gen/assets.gen.dart';
 import 'package:last_app/modules/home/widget/account_widget/add_image.dart';
 
@@ -14,63 +15,81 @@ class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        width: Get.width,
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 50,
-            ),
-            GestureDetector(
-              onTap: () {
-                AddImageController.mageBottomSheet(context);
-              },
-              child: Obx(
-                () => AddImageController.picImage.image!.value.path.isNotEmpty
-                    ? Container(
-                        width: Get.width / 3,
-                        height: Get.height / 5,
-                        decoration: BoxDecoration(
-                            color: Colors.amber,
-                            borderRadius: BorderRadius.circular(1000),
-                            image: DecorationImage(
-                              image: FileImage(
-                                  AddImageController.picImage.image!.value),
-                              fit: BoxFit.fill,
-                            )),
-                      )
-                    : Container(
-                        width: Get.width / 3,
-                        height: Get.height / 5,
-                        decoration: BoxDecoration(
-                            color: Colors.amber,
-                            borderRadius: BorderRadius.circular(1000),
-                            image: DecorationImage(
-                              image: AssetImage(Assets.images.user.path),
-                              fit: BoxFit.fill,
-                            )),
-                      ),
+      body: SingleChildScrollView(
+        child: SizedBox(
+          width: Get.width,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 50,
               ),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            Text(
-              "accuntPhone".tr,
-              style: const TextStyle(fontSize: 30),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            const Text(
-              "09125550011",
-              style: TextStyle(fontSize: 30),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            ElevatedButton(onPressed: () {}, child: const Icon(Icons.edit))
-          ],
+              GestureDetector(
+                onTap: () {
+                  AddImageController.mageBottomSheet(context);
+                },
+                child: Obx(
+                  () => AddImageController.picImage.image!.value.path.isNotEmpty
+                      ? Container(
+                          width: Get.width / 3,
+                          height: Get.height / 5,
+                          decoration: BoxDecoration(
+                              color: Colors.amber,
+                              borderRadius: BorderRadius.circular(1000),
+                              image: DecorationImage(
+                                image: FileImage(
+                                    AddImageController.picImage.image!.value),
+                                fit: BoxFit.fill,
+                              )),
+                        )
+                      : Container(
+                          width: Get.width / 3,
+                          height: Get.height / 5,
+                          decoration: BoxDecoration(
+                              color: Colors.amber,
+                              borderRadius: BorderRadius.circular(1000),
+                              image: DecorationImage(
+                                image: AssetImage(Assets.images.user.path),
+                                fit: BoxFit.fill,
+                              )),
+                        ),
+                ),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              const Text(
+                "Email",
+                style: TextStyle(fontSize: 20),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Text(
+                GetStorage().read("email"),
+                style: const TextStyle(fontSize: 18),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Text(
+                "date".tr,
+                style: const TextStyle(fontSize: 20),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Text(
+                GetStorage().read("date"),
+                style: const TextStyle(fontSize: 18),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+            ],
+          ),
         ),
       ),
     );

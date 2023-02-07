@@ -29,7 +29,7 @@ class HomeView extends StatelessWidget {
             index: homeController.currentIndex.value,
             // ignore: prefer_const_literals_to_create_immutables
             children: [
-              HomeScreen(),
+              SingleChildScrollView(child: HomeScreen()),
               BasketScreen(),
               const AccountScreen(),
             ],
