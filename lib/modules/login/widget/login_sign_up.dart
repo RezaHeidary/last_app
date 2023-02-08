@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:last_app/controller/firebase_controller.dart';
 import 'package:last_app/core/themes/style/btn_login_style.dart';
 import 'package:last_app/modules/login/controller/api_user_controller.dart';
-import 'package:last_app/modules/login/controller/firebase_controller.dart';
 import 'package:last_app/modules/login/controller/login_controller.dart';
 
 class LoginSingUpWidget {
@@ -47,7 +47,7 @@ class LoginSingUpWidget {
             onPressed: () {
               apiUserController.getLogin();
             },
-            style: BtnLoginStyle.btnStyle,
+            style: BtnLoginStyle.btnStyleForLpgin,
             child: const Text(
               "Login",
               style: TextStyle(fontSize: 25),

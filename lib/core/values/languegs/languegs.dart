@@ -29,6 +29,10 @@ class Messages extends Translations {
           'addImageFromgallery': 'Gallery',
           'addProduct': 'Add Product',
           'date': 'Login Date',
+          'drawerlight': 'Light',
+          'drawerDark': 'Dark',
+          'en': 'English',
+          'fa': 'Farsi',
           'exit': 'Exit'
         },
         'fa_IR': {
@@ -57,6 +61,10 @@ class Messages extends Translations {
           'addImageFromgallery': 'گالری',
           'addProduct': 'سبد خرید خالی است',
           'date': 'زمان ورود',
+          'drawerlight': 'روشن',
+          'drawerDark': 'تاریک',
+          'en': 'انگلیسی',
+          'fa': 'فارسی',
           'exit': 'خروج'
         }
       };

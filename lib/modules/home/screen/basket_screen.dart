@@ -24,6 +24,7 @@ class BasketScreen extends StatelessWidget {
                     itemBuilder: (context, index) => Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Material(
+                            color: Theme.of(context).cardColor,
                             borderRadius: BorderRadius.circular(30),
                             elevation: 5,
                             child: Container(
@@ -54,7 +55,11 @@ class BasketScreen extends StatelessWidget {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
                                       children: [
-                                        Text(fakeData.name[index]),
+                                        Text(
+                                          fakeData.name[index],
+                                          maxLines: 1,
+                                          overflow: TextOverflow.clip,
+                                        ),
                                         Text(
                                           "basketPrice".tr +
                                               fakeData.price[index]
@@ -67,11 +72,11 @@ class BasketScreen extends StatelessWidget {
                                       width: Get.width / 5,
                                       height: Get.height,
                                       child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(bottom: 10),
+                                        padding: const EdgeInsets.only(
+                                            bottom: 10, right: 5),
                                         child: Row(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.end,
+                                              MainAxisAlignment.start,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.end,
                                           children: [
@@ -87,7 +92,7 @@ class BasketScreen extends StatelessWidget {
                                               ),
                                             ),
                                             const SizedBox(
-                                              width: 16,
+                                              width: 10,
                                             ),
                                             GestureDetector(
                                               child: const Icon(

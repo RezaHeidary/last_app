@@ -61,6 +61,7 @@ dependencies:
   image_cropper: ^3.0.1
   loading_animation_widget: ^1.2.0+4
   shamsi_date: ^1.0.1
+  http: ^0.13.5
 
 
 flutter_native_splash:

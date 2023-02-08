@@ -1,6 +1,4 @@
 import 'dart:developer';
-
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,7 +16,6 @@ class LoginFireBase extends GetxController {
   static var apiUserController = Get.find<ApiUserController>();
   GetStorage getStorage = GetStorage();
   getToken() async {
-    await Firebase.initializeApp();
     var sms = FirebaseMessaging.instance;
     var token = await sms.getToken();
     print(token);

@@ -1,39 +1,25 @@
-// {
-//     "id": 201,
-//     "title": "New Product",
-//     "price": 10,
-//     "description": "A description",
-//     "images": [
-//         "https://placeimg.com/640/480/any",
-//         "https://api.lorem.space/image/furniture?w=640&h=480&r=1109"
-//     ],
-//     "creationAt": "2023-02-06T09:54:45.000Z",
-//     "updatedAt": "2023-02-06T09:54:45.000Z",
-//     "category": {
-//         "id": 1,
-//         "name": "Clothes",
-//         "image": "https://api.lorem.space/image/fashion?w=640&h=480&r=2422",
-//         "creationAt": "2023-02-06T06:49:58.000Z",
-//         "updatedAt": "2023-02-06T06:49:58.000Z"
-//     }
-// },
-
 class ProductModel {
-  ProductModel._();
+  late int id;
+  late String title;
+  late int price;
+  late String description;
+  late List<dynamic> images;
+  late Map<String, dynamic> category;
 
-  int? id;
-  String? title;
-  int? price;
-  String? description;
-  List<dynamic>? images;
-  Map<String, dynamic>? category;
+  ProductModel(
+      {required this.id,
+      required this.title,
+      required this.price,
+      required this.description,
+      required this.images,
+      required this.category});
 
   ProductModel.fromJson(Map<String, dynamic> element) {
-    id = element["id"];
-    title = element["title"];
-    price = element["price"];
+    id = element["id"] as int;
+    title = element["title"] as String;
+    price = element["price"] as int;
     description = element["description"];
-    images = element["images"];
-    category = element["category"];
+    images = element["images"] as List<dynamic>;
+    category = element["category"] as Map<String, dynamic>;
   }
 }

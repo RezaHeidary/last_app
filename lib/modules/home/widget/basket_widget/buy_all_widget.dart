@@ -8,7 +8,7 @@ class BuyAllWidget {
   static var fakeData = Get.find<FakeData>();
   static widgetBuyAll(context) {
     return FloatingActionButton(
-        onPressed: () async {
+        onPressed: () {
           //  await Componet.getLinke();
           Get.bottomSheet(
               backgroundColor: Theme.of(context).colorScheme.background,

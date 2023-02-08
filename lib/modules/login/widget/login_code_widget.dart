@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:last_app/controller/firebase_controller.dart';
 import 'package:last_app/core/themes/style/btn_login_style.dart';
-import 'package:last_app/modules/login/controller/firebase_controller.dart';
 import '../controller/login_controller.dart';
 
 class LoginCodeWidget {
@@ -29,10 +29,11 @@ class LoginCodeWidget {
           height: 80,
         ),
         ElevatedButton(
-            onPressed: () {
-              loginFireBaseController.getCheckCodeForLogin();
-            },
-            style: BtnLoginStyle.btnStyle,
+            // onPressed: () {
+            //   loginFireBaseController.getCheckCodeForLogin();
+            // },.
+            style: BtnLoginStyle.btnStyleForLpgin,
+            onPressed: loginFireBaseController.getCheckCodeForLogin,
             child: Text(
               "btnCode".tr,
               style: const TextStyle(fontSize: 25),

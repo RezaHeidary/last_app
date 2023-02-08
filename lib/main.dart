@@ -7,6 +7,8 @@ import 'package:last_app/core/values/languegs/languegs.dart';
 import 'package:last_app/routes/pages.dart';
 import 'package:last_app/routes/routes.dart';
 
+import 'data/seviec/network.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
@@ -19,12 +21,13 @@ void main() async {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
   GetStorage islogin = GetStorage();
-
+  NetWork netWork = Get.put(NetWork());
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: 'Shop',
+      debugShowCheckedModeBanner: false,
       translations: Messages(),
       locale: const Locale('en', 'US'),
       fallbackLocale: const Locale('fa', 'IR'),

@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:last_app/controller/product_api_controller.dart';
 import 'package:last_app/modules/home/controller/home_controller.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:persian_number_utility/persian_number_utility.dart';
 
 class ListProducts {
   ListProducts._();
@@ -14,7 +13,7 @@ class ListProducts {
   static widgetListProduct() {
     return SizedBox(
       width: Get.width,
-      height: Get.height / 2,
+      height: Get.height / 2.4,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         physics: const ScrollPhysics(parent: BouncingScrollPhysics()),
@@ -29,44 +28,53 @@ class ListProducts {
               width: Get.width / 2,
               child: CachedNetworkImage(
                 imageUrl:
-                    homeApiController.homeModleList[index].category!['image'],
-                imageBuilder: (context, imageProvider) => Material(
-                  elevation: 10,
-                  borderRadius: BorderRadius.circular(25),
-                  child: Column(
-                    children: [
-                      Container(
-                        width: Get.width,
-                        height: Get.height / 4,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                          image: DecorationImage(
-                            image: imageProvider,
-                            fit: BoxFit.cover,
+                    homeApiController.homeModleList[index].category['image'],
+                imageBuilder: (context, imageProvider) => SizedBox(
+                  height: Get.height / 10,
+                  child: Material(
+                    color: Theme.of(context).cardColor,
+                    elevation: 10,
+                    borderRadius: BorderRadius.circular(25),
+                    child: Column(
+                      children: [
+                        Container(
+                          width: Get.width,
+                          height: Get.height / 4,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            image: DecorationImage(
+                              image: imageProvider,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        homeApiController.homeModleList[index].title.toString(),
-                        style: TextStyle(fontSize: 16),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        homeApiController.homeModleList[index].price.toString(),
-                        style: TextStyle(fontSize: 15),
-                      ),
-                    ],
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          homeApiController.homeModleList[index].title
+                              .toString(),
+                          style: const TextStyle(fontSize: 16),
+                          maxLines: 1,
+                          overflow: TextOverflow.clip,
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          homeApiController.homeModleList[index].price
+                              .toString(),
+                          style: const TextStyle(fontSize: 15),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 placeholder: (context, url) =>
                     LoadingAnimationWidget.dotsTriangle(
                   size: 50,
-                  color: Colors.deepOrange,
+                  color: Theme.of(context).cardColor,
                 ),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),

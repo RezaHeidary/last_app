@@ -8,8 +8,9 @@ class AddBasketController extends GetxController {
   getAddBasket(int index) {
     fakeData.name.add(homeApiController.homeModleList[index].title);
     fakeData.imagePosterGridview
-        .add(homeApiController.homeModleList[index].images![0]);
+        .add(homeApiController.homeModleList[index].images[0]);
     fakeData.price.add(homeApiController.homeModleList[index].price);
-    fakeData.sumPorduct += homeApiController.homeModleList[index].price!;
+    fakeData.sumPorduct += homeApiController.homeModleList[index].price;
+    Get.snackbar(homeApiController.homeModleList[index].title, "Add in basket");
   }
 }

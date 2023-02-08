@@ -16,12 +16,12 @@ class HomePosterWidget {
       child: Directionality(
         textDirection: TextDirection.ltr,
         child: PageIndicatorContainer(
-            length: 2,
+            length: homeApiController.homeModleList.isNotEmpty ? 2 : 0,
             child: PageView.builder(
               itemCount: 2,
               physics: const ScrollPhysics(parent: BouncingScrollPhysics()),
               itemBuilder: (context, index) => CachedNetworkImage(
-                imageUrl: homeApiController.homeModleList[index].images![index],
+                imageUrl: homeApiController.homeModleList[index].images[index],
                 imageBuilder: (context, imageProvider) => Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -33,7 +33,7 @@ class HomePosterWidget {
                 placeholder: (context, url) =>
                     LoadingAnimationWidget.dotsTriangle(
                   size: 50,
-                  color: Colors.deepOrange,
+                  color: Theme.of(context).cardColor,
                 ),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),

@@ -33,7 +33,6 @@ class AccountScreen extends StatelessWidget {
                           width: Get.width / 3,
                           height: Get.height / 5,
                           decoration: BoxDecoration(
-                              color: Colors.amber,
                               borderRadius: BorderRadius.circular(1000),
                               image: DecorationImage(
                                 image: FileImage(
@@ -45,7 +44,6 @@ class AccountScreen extends StatelessWidget {
                           width: Get.width / 3,
                           height: Get.height / 5,
                           decoration: BoxDecoration(
-                              color: Colors.amber,
                               borderRadius: BorderRadius.circular(1000),
                               image: DecorationImage(
                                 image: AssetImage(Assets.images.user.path),

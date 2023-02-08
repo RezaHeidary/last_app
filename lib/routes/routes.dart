@@ -20,7 +20,7 @@ class Pages {
     ),
     GetPage(
       name: NamedRoute.productRoute,
-      page: () => ProdcutView(),
+      page: () => const ProdcutView(),
     ),
     GetPage(
       name: NamedRoute.productShowImagesRoute,

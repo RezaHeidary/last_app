@@ -10,7 +10,6 @@ class FloatButtonWidget {
     return FloatingActionButton(
       onPressed: () {
         addBasketController.getAddBasket(index);
-        Get.snackbar("Add", "");
       },
       child: const Icon(Icons.add),
     );

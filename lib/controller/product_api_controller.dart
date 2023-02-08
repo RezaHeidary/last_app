@@ -4,7 +4,8 @@ import '../modules/home/model/product_model.dart';
 
 class ProductApiController extends GetxController {
   var loading = true.obs;
-  RxList<ProductModel> homeModleList = RxList();
+  var homeModleList = List<ProductModel>.empty(growable: true).obs;
+
   @override
   onInit() {
     super.onInit();
@@ -16,11 +17,11 @@ class ProductApiController extends GetxController {
     homeModleList.clear();
     final response = await DioService()
         .getMethod("https://api.escuelajs.co/api/v1/products/");
-    print(response);
+    final List myresponse = response.data;
 
-    await response.data.forEach((val) {
-      homeModleList.add(ProductModel.fromJson(val));
-    });
+    List<ProductModel> list =
+        myresponse.map((json) => ProductModel.fromJson(json)).toList();
+    homeModleList.addAll(list);
 
     loading.value = false;
   }

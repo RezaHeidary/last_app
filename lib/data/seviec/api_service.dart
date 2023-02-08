@@ -1,5 +1,4 @@
 import 'dart:developer';
-import 'package:dio/dio.dart' as dio_service;
 import 'package:dio/dio.dart';
 
 class DioService {
@@ -10,8 +9,8 @@ class DioService {
         .get(url,
             options: Options(responseType: ResponseType.json, method: 'GET'))
         .then((response) {
-      // log(response.toString());
       return response;
+      // ignore: body_might_complete_normally_catch_error
     }).catchError((err) {
       if (err is DioError) {
         return err.response!;

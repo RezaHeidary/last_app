@@ -11,7 +11,6 @@ class AddImageController {
     return showModalBottomSheet(
         isScrollControlled: true,
         context: context,
-        backgroundColor: Colors.transparent,
         builder: ((context) => Padding(
             padding: EdgeInsets.only(
               bottom: MediaQuery.of(context).viewInsets.bottom,
@@ -19,7 +18,6 @@ class AddImageController {
             child: Container(
                 height: Get.height / 4,
                 decoration: const BoxDecoration(
-                  color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30),

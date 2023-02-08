@@ -19,7 +19,7 @@ class ProductShowImageView extends StatelessWidget {
       appBar: AppBar(
         title: Obx(
           () => Text(
-              "Image:${productShowImageController.count.value}/${homeApiController.homeModleList[Get.arguments].images!.length}"),
+              "Image:${productShowImageController.count.value}/${homeApiController.homeModleList[Get.arguments].images.length}"),
         ),
       ),
       body: PhotoViewGallery.builder(
@@ -30,12 +30,11 @@ class ProductShowImageView extends StatelessWidget {
         builder: (BuildContext context, int index) {
           return PhotoViewGalleryPageOptions(
             imageProvider: NetworkImage(
-                homeApiController.homeModleList[Get.arguments].images![index]),
+                homeApiController.homeModleList[Get.arguments].images[index]),
             initialScale: PhotoViewComputedScale.contained * 0.8,
           );
         },
-        itemCount:
-            homeApiController.homeModleList[Get.arguments].images!.length,
+        itemCount: homeApiController.homeModleList[Get.arguments].images.length,
       ),
     );
   }

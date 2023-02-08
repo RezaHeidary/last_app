@@ -7,11 +7,13 @@ class BottomNavStyle {
   BottomNavStyle._();
   static var homeController = Get.find<HomeController>();
 
-  static widgetBottomNavStyle() {
+  static widgetBottomNavStyle(context) {
     return Obx(
       () => CustomNavigationBar(
         iconSize: 30.0,
-        selectedColor: const Color.fromARGB(255, 30, 124, 108),
+        selectedColor:
+            Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
+        backgroundColor: Theme.of(context).bottomAppBarTheme.color!,
         currentIndex: homeController.currentIndex.value,
         onTap: (index) {
           homeController.currentIndex.value = index;

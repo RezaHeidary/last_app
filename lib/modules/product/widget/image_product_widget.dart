@@ -18,7 +18,7 @@ class ImageProductWidget {
           width: Get.width,
           height: Get.height / 2.5,
           child: CachedNetworkImage(
-            imageUrl: homeApiController.homeModleList[index].images![0],
+            imageUrl: homeApiController.homeModleList[index].images[0],
             imageBuilder: (context, imageProvider) => Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -29,7 +29,7 @@ class ImageProductWidget {
             ),
             placeholder: (context, url) => LoadingAnimationWidget.dotsTriangle(
               size: 50,
-              color: Colors.deepOrange,
+              color: Theme.of(context).cardColor,
             ),
             errorWidget: (context, url, error) => const Icon(Icons.error),
           ),

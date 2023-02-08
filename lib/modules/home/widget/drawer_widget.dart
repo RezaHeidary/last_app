@@ -1,50 +1,90 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:last_app/modules/home/controller/home_drawer_controller.dart';
+import 'package:last_app/core/themes/themes.dart';
 import 'package:last_app/routes/pages.dart';
+
+import '../controller/home_controller.dart';
 
 class DrawerWideget {
   DrawerWideget._();
-  static var homeDrawerController = Get.find<HomeDrawerController>();
+  static var homeController = Get.find<HomeController>();
   static widgetDrawerWideget() {
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.zero,
         children: [
-          DrawerHeader(
-            child: Text('drawerSeting'.tr),
-          ),
           ListTile(
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('drawerLocal'.tr),
-                Obx(
-                  () => Switch(
-                    value: homeDrawerController.flagLocal.value,
-                    onChanged: (value) {
-                      homeDrawerController.flagLocal.value = value;
-                      homeDrawerController.getLocal();
-                    },
+            title: Obx(
+              () => Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('drawerLThemes'.tr),
+                  Row(
+                    children: [
+                      Text('drawerlight'.tr),
+                      Radio(
+                        onChanged: (value) {
+                          Get.changeTheme(Themes.lightTheme);
+                          homeController.flagTheme.value = value!;
+                        },
+                        groupValue: homeController.flagTheme.value,
+                        value: 0,
+                      ),
+                    ],
                   ),
-                ),
-              ],
+                  Row(
+                    children: [
+                      Text("drawerDark".tr),
+                      Radio(
+                        onChanged: (value) {
+                          Get.changeTheme(Themes.darkTheme);
+                          homeController.flagTheme.value = value!;
+                        },
+                        groupValue: homeController.flagTheme.value,
+                        value: 1,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
           ListTile(
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('drawerLThemes'.tr),
-                Obx(() => Switch(
-                      value: homeDrawerController.flagTheme.value,
-                      onChanged: (value) {
-                        homeDrawerController.flagTheme.value = value;
-                        homeDrawerController.getTheme();
-                      },
-                    ))
-              ],
+            title: Obx(
+              () => Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('drawerLocal'.tr),
+                  Row(
+                    children: [
+                      Text('en'.tr),
+                      Radio(
+                        onChanged: (value) {
+                          Get.updateLocale(const Locale('en', 'Us'));
+                          homeController.flagLocal.value = value!;
+                        },
+                        groupValue: homeController.flagLocal.value,
+                        value: 1,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text("fa".tr),
+                      Radio(
+                        onChanged: (value) {
+                          Get.updateLocale(const Locale('fa', 'IR'));
+                          homeController.flagLocal.value = value!;
+                        },
+                        groupValue: homeController.flagLocal.value,
+                        value: 0,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
           ListTile(
