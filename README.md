@@ -33,11 +33,7 @@ see the products, buy a product, add the products to the shopping cart.
 
 
 
-### Backend  
-<div align="center">  
-<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/php-original.svg" alt="PHP" height="50" />  
-<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/python-original.svg" alt="Python" height="50" />  
-</div>
+
  </table>  
 
 <br/>
