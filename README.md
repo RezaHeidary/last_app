@@ -7,11 +7,16 @@ see the products, buy a product, add the products to the shopping cart.
 <div align="center">
 <img src="https://user-images.githubusercontent.com/92585486/217546417-52a3c2bc-c0eb-4e36-862b-d88cb6462d45.png"align="center" width="200" />
 <img src="https://user-images.githubusercontent.com/92585486/217546417-52a3c2bc-c0eb-4e36-862b-d88cb6462d45.png"align="center" width="200" />
-<img src="https://user-images.githubusercontent.com/92585486/217546417-52a3c2bc-c0eb-4e36-862b-d88cb6462d45.png"align="center" width="200" />
-<img src="https://user-images.githubusercontent.com/92585486/217546417-52a3c2bc-c0eb-4e36-862b-d88cb6462d45.png"align="center" width="200" />
-<img src="https://user-images.githubusercontent.com/92585486/217546417-52a3c2bc-c0eb-4e36-862b-d88cb6462d45.png"align="center" width="200" />
+<img src="https://user-images.githubusercontent.com/92585486/217546439-def71321-a113-4f73-9b10-d10a12206216.png"align="center" width="200" />
+<img src="https://user-images.githubusercontent.com/92585486/217546443-703a1234-9cc9-4a73-ae7e-d1bb8fb6c8d8.png"align="center" width="200" />
+<img src="https://user-images.githubusercontent.com/92585486/217546453-90cef283-b876-4548-931f-db8b2092b034.png"align="center" width="200" />
+<img src="https://user-images.githubusercontent.com/92585486/217546455-35f657cf-fd7e-4054-9264-2548789d33c0.png" align="center" height="" width="200" />
+  
+<img src="https://user-images.githubusercontent.com/92585486/217546455-35f657cf-fd7e-4054-9264-2548789d33c0.png" align="center" height="" width="200" />
+<img src="https://user-images.githubusercontent.com/92585486/217546455-35f657cf-fd7e-4054-9264-2548789d33c0.png" align="center" height="" width="200" />
+<img src="https://user-images.githubusercontent.com/92585486/217546455-35f657cf-fd7e-4054-9264-2548789d33c0.png" align="center" height="" width="200" />
+<img src="https://user-images.githubusercontent.com/92585486/217546455-35f657cf-fd7e-4054-9264-2548789d33c0.png" align="center" height="" width="200" />
 
-<img src="https://user-images.githubusercontent.com/92585486/217546435-0ccd9776-0e03-4be0-b728-0e3bd9fc9657.png" align="center" height="" width="200" />
 </div>  
   
 
@@ -21,23 +26,20 @@ see the products, buy a product, add the products to the shopping cart.
 ## Skills
 
 
-<table><tr><td valign="top" width="33%">
 
 
 
 ### Client App  
-<div align="center">  
+<div align="center" width="33%">  
 <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/flutterio-icon.svg" alt="Flutter" height="50" />  
 <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/dartlang-icon.svg" alt="Dart" height="50" />  
 <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/firebase.png" alt="Firebase" height="50" />  
 <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/adobexd.png" alt="Adobe XD" height="50" />  
 </div>
 
-</td><td valign="top" width="33%">
 
 
 
 
- </table>  
 
 <br/>
