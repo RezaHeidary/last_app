@@ -15,7 +15,6 @@ app have 2 theme dark and light .
 <img src="https://user-images.githubusercontent.com/92585486/217546443-703a1234-9cc9-4a73-ae7e-d1bb8fb6c8d8.png"align="center" width="200" />
   &nbsp;&nbsp;&nbsp;
 <img src="https://user-images.githubusercontent.com/92585486/217546453-90cef283-b876-4548-931f-db8b2092b034.png"align="center" width="200" />
-  &nbsp;&nbsp;&nbsp;
   <br/>  
 
 <img src="https://user-images.githubusercontent.com/92585486/217546455-35f657cf-fd7e-4054-9264-2548789d33c0.png" align="center" height="" width="200" />
@@ -25,7 +24,6 @@ app have 2 theme dark and light .
 <img src="https://user-images.githubusercontent.com/92585486/217546494-48259d0b-2bf4-4807-addb-a06c1ce8ad2c.png" align="center" height="" width="200" />
   &nbsp;&nbsp;&nbsp;
 <img src="https://user-images.githubusercontent.com/92585486/217546498-87a22cd4-1408-4eeb-ba1e-08a5e621ad0b.png" align="center" height="" width="200" />
-    &nbsp;&nbsp;&nbsp;
 
 
 </div>  
