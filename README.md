@@ -16,7 +16,8 @@ app have 2 theme dark and light .
   &nbsp;&nbsp;&nbsp;
 <img src="https://user-images.githubusercontent.com/92585486/217546453-90cef283-b876-4548-931f-db8b2092b034.png"align="center" width="200" />
   &nbsp;&nbsp;&nbsp;
-  
+  <br/>  
+
 <img src="https://user-images.githubusercontent.com/92585486/217546455-35f657cf-fd7e-4054-9264-2548789d33c0.png" align="center" height="" width="200" />
   &nbsp;&nbsp;&nbsp;
 <img src="https://user-images.githubusercontent.com/92585486/217546514-8905ce4a-e053-44c4-877a-3dc819df1bc1.png" align="center" height="" width="200" />
